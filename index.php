@@ -140,6 +140,7 @@ echo $pieces[0];
 echo $pieces[1];?>
 
 <p>My exploded string of Kingsley family cats:</p>
+<p>Disclaimer: No cats were harmed in the making of this code.</p>
 <?php
 $kitties = "Daisy, Mitzi, Gracie, Sam, Frodo, Knightley";
 $kitty = explode(", ", $kitties);
@@ -153,6 +154,25 @@ $kitty = explode(", ", $kitties);
 <li><?php echo $kitty[5];?></li>
 </ul>
 
+<h3>Calculate Average</h3>
+<p><?php count(array(1,2,3,4,5));?></p>
+
+
+
+
+function calculate_average($arr)
+{
+	$count = count($arr);
+	foreach ($arr as $value){
+	$total = $total + $value;	# code...
+	}
+$Average = ($total/$count);
+return $Average;}
+
+$number_array = array("1","2","3","4","5");
+?>
+
+<p><?php echo calculate_average($number_array)?></p>
 
 </body>
 </html>
