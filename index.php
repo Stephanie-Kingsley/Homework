@@ -1,13 +1,22 @@
+<style type="text/css">
+header, body{background-color:hsl(120,60%,70%);}
+title, h1{text-align: center;}
+</style>
+
+
 <html>
 <head>
-	<title>Example 1</title>
+	<title>Homework</title>
 </head>
 <body>
-	<h1>My Website</h1>
+	<h1>My Homework</h1>
+	<h2>Homework Week #1</h2>
 	<p><?php echo 'Is dinosaur free';?></p>
+</hr>
 	<p><?php echo 42+3;?></p>
 	<?php $address="114 Observatory" ;?>
 	<p><?php echo $address;?></p>
+</hr>	
 	<ul>
 		<?php 
 		$authors = array(
@@ -19,7 +28,9 @@
 	foreach ($authors as $year => $author):
 		?><li><?php echo "$author died in $year."?></li> <?php endforeach;?>
 	</ul>
-
+</hr>
+</hr>
+<h2>Homework Week #2</h2>
 <p><?php 
 function seconds_to_years($seconds)
 {
@@ -51,6 +62,7 @@ function days_to_weeks($days)
 <p><?php echo days_to_weeks(28);?></p>
 
 <hr/>
+</hr>
 
 <h2>Homework Week #3</h2>
 <h3>Function for Multiplication</h3>
@@ -66,6 +78,8 @@ function multiply($x,$y)
 <p><?php echo multiply(900,32);?><p>
 <p><?php echo multiply(299999,23);?><p>
 
+</hr>
+
 <h3>Function for Division</h3>
 <?php
 function divide($x,$y)
@@ -77,6 +91,8 @@ function divide($x,$y)
 <p><?php echo divide(2,4);?></p>
 <p><?php echo divide(0,384);?></p>
 <p><?php echo divide(900,32);?></p>
+
+</hr>
 
 <h3>Greater-Than, Less-Than, or Equal-To</h3>
 <?php
@@ -98,6 +114,7 @@ function less_than($x,$y)
 <p><?php echo less_than(3,3);?></p>
 <p><?php echo less_than(200,1000);?></p>
 
+</hr>
 
 <h3>String Length</h3>
 <?php
@@ -112,6 +129,8 @@ return strlen($str);
 <p><?php echo string_length("Knightley");?></p>
 <p><?php echo string_length("Stephanie");?></p>
 <p><?php echo string_length("PraxisTeamYay");?></p>
+
+</hr>
 
 <h3>String Reversal</h3>
 <p>PHP documentation example:</p>
@@ -128,6 +147,8 @@ return strrev($str);
 <p><?php echo string_reversal("Knightley Kingsley")?></p>
 <p><?php echo string_reversal("Stephanie")?></p>
 <p><?php echo string_reversal("Praxis Team Yay!")?></p>
+
+</hr>
 
 <h3>Exploding Strings!!!!!!!</h3>
 <p><img src="prettyexplosion.jpg"></p>
@@ -154,12 +175,9 @@ $cat = explode(" ", $cats);
 <li><?php echo $cat[5];?></li>
 </ul>
 
+</hr>
 
 <h4>Now as a function into which you can plug any sentence--that is, any sentence of four words. : / </h4>
-
-
-
-
 
 <?php
 function explode_sentence($sentence)
@@ -202,6 +220,7 @@ function word_count($platitude)
 
 <p>So I know how to count, but how do I apply that to exploding my sentences?</p>
 
+<img src="stuck.jpg">
 
 
 
@@ -213,8 +232,7 @@ function word_count($platitude)
 
 
 
-
-
+</hr>
 
 <h3>An array based on authors exercise from last week</h3>
 
@@ -232,26 +250,16 @@ foreach ($cats as $cat => $food):
 <?php endforeach;?>
 </ul>
 
+</hr>
 
 <h3>Calculate Average</h3>
-<p><?php count(array(1,2,3,4,5));?></p>
 
 
 
 
-function calculate_average($arr)
-{
-	$count = count($arr);
-	foreach ($arr as $value){
-	$total = $total + $value;	# code...
-	}
-$Average = ($total/$count);
-return $Average;}
 
-$number_array = array("1","2","3","4","5");
-?>
 
-<p><?php echo calculate_average($number_array)?></p>
+
 
 </body>
 </html>
