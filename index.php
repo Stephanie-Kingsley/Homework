@@ -80,12 +80,12 @@ function divide($x,$y)
 
 <h3>Greater-Than, Less-Than, or Equal-To</h3>
 <?php
-function greater_than($x,$y)
+function less_than($x,$y)
 {
-	if ($x > $y) {echo $x;
+	if ($x < $y) {echo $x;
 		# code...
 	}
-	if ($y > $x) {echo $y;
+	if ($y < $x) {echo $y;
 		# code...
 	}
 	if ($x == $y) {echo "$x and $y are equivalent.";
@@ -93,10 +93,10 @@ function greater_than($x,$y)
 	}
 }
 ?>
-<p><?php echo greater_than(4,2);?></p>
-<p><?php echo greater_than(3,5);?></p>
-<p><?php echo greater_than(3,3);?></p>
-<p><?php echo greater_than(200,1000);?></p>
+<p><?php echo less_than(4,2);?></p>
+<p><?php echo less_than(3,5);?></p>
+<p><?php echo less_than(3,3);?></p>
+<p><?php echo less_than(200,1000);?></p>
 
 
 <h3>String Length</h3>
@@ -142,17 +142,96 @@ echo $pieces[1];?>
 <p>My exploded string of Kingsley family cats:</p>
 <p>Disclaimer: No cats were harmed in the making of this code.</p>
 <?php
-$kitties = "Daisy, Mitzi, Gracie, Sam, Frodo, Knightley";
-$kitty = explode(", ", $kitties);
+$cats = "Daisy Mitzi Gracie Sam Frodo Knightley";
+$cat = explode(" ", $cats);
 ?>
 <ul>
-<li><?php echo $kitty[0];?></li>
-<li><?php echo $kitty[1];?></li>
-<li><?php echo $kitty[2];?></li>
-<li><?php echo $kitty[3];?></li>
-<li><?php echo $kitty[4];?></li>
-<li><?php echo $kitty[5];?></li>
+<li><?php echo $cat[0];?></li>
+<li><?php echo $cat[1];?></li>
+<li><?php echo $cat[2];?></li>
+<li><?php echo $cat[3];?></li>
+<li><?php echo $cat[4];?></li>
+<li><?php echo $cat[5];?></li>
 </ul>
+
+
+<h4>Now as a function into which you can plug any sentence--that is, any sentence of four words. : / </h4>
+
+
+
+
+
+<?php
+function explode_sentence($sentence)
+{
+	$word = explode(" ", $sentence);
+	echo "$sentence reads as";
+	?>
+	<ul>
+    <li><?php echo $word[0];?></li>
+    <li><?php echo $word[1];?></li>
+    <li><?php echo $word[2];?></li>
+    <li><?php echo $word[3];?></li>
+	</ul>
+	<?php
+ };
+ ?>
+
+<p><?php echo explode_sentence("The cat is black.")?></p>
+<p><?php echo explode_sentence("The quick brown fox jumped over the lazy dog.");?></p>
+
+<p>So my question now is, can I somehow program it to count the number of words in the sentence and generate that number of word slots?</p>
+ 
+
+<?php
+function word_count($platitude)
+{
+	echo "There are ";
+    echo str_word_count($platitude);
+	echo " words in this sentence: ";
+	echo $platitude;
+}
+?>
+<ul>
+<li><?php echo word_count("What goes around comes around.")?></li>
+<li><?php echo word_count("Early to bed, early to rise, makes a man healthy, wealthy, and wise.")?></li>
+<li><?php echo word_count("A bird in the hand is worth two in the bush.")?></li>
+</ul>
+
+
+
+<p>So I know how to count, but how do I apply that to exploding my sentences?</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>An array based on authors exercise from last week</h3>
+
+<ul>
+<?php
+$cats = array(
+	'Daisy' => 'turkey and ice cream',
+	'Mitzi' => 'hairball control Science Diet',
+	'Sam' => 'wet canned Fancy Feast',
+	'Frodo' => 'wet canned Fancy Feast',
+	'Knightley' => 'Iams kitten food'
+	);
+foreach ($cats as $cat => $food):
+    ?><li><?php echo "$cat always eats $food."?></li>
+<?php endforeach;?>
+</ul>
+
 
 <h3>Calculate Average</h3>
 <p><?php count(array(1,2,3,4,5));?></p>
@@ -176,5 +255,3 @@ $number_array = array("1","2","3","4","5");
 
 </body>
 </html>
-
-
